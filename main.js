@@ -367,13 +367,13 @@ function swipedetect(el, callback) {
 const slidesEl = document.querySelector(".slides");
 swipedetect(slidesEl, function (swipedir) {
   if (swipedir === "none") return;
-  if (swipedir === "right") {
+  if (swipedir === "left") {
     for (let arrowButton of arrowButtons) {
       arrowButton.classList.remove("active");
     }
     arrowButtons[1].classList.add("active");
   }
-  if (swipedir === "left") {
+  if (swipedir === "right") {
     for (let arrowButton of arrowButtons) {
       arrowButton.classList.remove("active");
     }
