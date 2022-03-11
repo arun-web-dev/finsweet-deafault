@@ -301,7 +301,6 @@ function stopInterval() {
 
 // slider function
 
-// credit: http://www.javascriptkit.com/javatutors/touchevents2.shtml
 function swipedetect(el, callback) {
   var touchsurface = el,
     swipedir,
@@ -359,28 +358,15 @@ function swipedetect(el, callback) {
         if (Math.abs(distX) >= threshold && Math.abs(distY) <= restraint) {
           // 2nd condition for horizontal swipe met
           swipedir = distX < 0 ? "left" : "right";
-          if (swipedir === "right") {
-            for (let arrowButton of arrowButtons) {
-              arrowButton.classList.remove("active");
-            }
-            arrowButtons[1].classList.add("active");
-          }
-          if (swipedir === "left") {
-            for (let arrowButton of arrowButtons) {
-              arrowButton.classList.remove("active");
-            }
-            arrowButtons[0].classList.add("active");
-          }
-
-          slide(swipedir);
-        } else if (
-          Math.abs(distY) >= threshold &&
-          Math.abs(distX) <= restraint
-        ) {
-          // 2nd condition for vertical swipe met
-          swipedir = distY < 0 ? "up" : "down";
-          // if dist traveled is negative, it indicates up swipe
         }
+        // } else if (
+        //   Math.abs(distY) >= threshold &&
+        //   Math.abs(distX) <= restraint
+        // ) {
+        //   // 2nd condition for vertical swipe met
+        //   swipedir = distY < 0 ? "up" : "down";
+        //   // if dist traveled is negative, it indicates up swipe
+        // }
       }
       handleswipe(swipedir);
       // e.preventDefault();
@@ -389,7 +375,20 @@ function swipedetect(el, callback) {
   );
 }
 
-//USAGE:
-
 const slidesEl = document.querySelector(".slides");
-swipedetect(slidesEl);
+swipedetect(slidesEl, function (swipedir) {
+  if (swipedir === "none") return;
+  if (swipedir === "right") {
+    for (let arrowButton of arrowButtons) {
+      arrowButton.classList.remove("active");
+    }
+    arrowButtons[1].classList.add("active");
+  }
+  if (swipedir === "left") {
+    for (let arrowButton of arrowButtons) {
+      arrowButton.classList.remove("active");
+    }
+    arrowButtons[0].classList.add("active");
+  }
+  slide(swipedir);
+});
