@@ -384,7 +384,7 @@ function swipedetect(el, callback) {
         }
       }
       handleswipe(swipedir);
-      // e.preventDefault();
+      e.preventDefault();
     },
     false
   );
