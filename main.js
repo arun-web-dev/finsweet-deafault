@@ -373,6 +373,7 @@ function swipedetect(el, callback) {
           //   arrowButtons[0].classList.add("active");
           //   slide("right");
           // }
+          // sw
           slide(swipedir);
         } else if (
           Math.abs(distY) >= threshold &&
