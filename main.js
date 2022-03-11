@@ -359,20 +359,20 @@ function swipedetect(el, callback) {
         if (Math.abs(distX) >= threshold && Math.abs(distY) <= restraint) {
           // 2nd condition for horizontal swipe met
           swipedir = distX < 0 ? "left" : "right";
-          if (swipedir === "right") {
-            for (let arrowButton of arrowButtons) {
-              arrowButton.classList.remove("active");
-            }
-            arrowButtons[1].classList.add("active");
-            slide("left");
-          }
-          if (swipedir === "left") {
-            for (let arrowButton of arrowButtons) {
-              arrowButton.classList.remove("active");
-            }
-            arrowButtons[0].classList.add("active");
-            slide("right");
-          }
+          // if (swipedir === "right") {
+          //   for (let arrowButton of arrowButtons) {
+          //     arrowButton.classList.remove("active");
+          //   }
+          //   arrowButtons[1].classList.add("active");
+          //   slide("left");
+          // }
+          // if (swipedir === "left") {
+          //   for (let arrowButton of arrowButtons) {
+          //     arrowButton.classList.remove("active");
+          //   }
+          //   arrowButtons[0].classList.add("active");
+          //   slide("right");
+          // }
           slide(swipedir);
         } else if (
           Math.abs(distY) >= threshold &&
