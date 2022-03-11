@@ -392,6 +392,4 @@ function swipedetect(el, callback) {
 //USAGE:
 
 const slidesEl = document.querySelector(".slides");
-swipedetect(slidesEl, function (swipedir) {
-  console.log("swipedir");
-});
+swipedetect(slidesEl);
