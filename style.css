@@ -15,8 +15,6 @@ body {
   padding: 0;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
-  cursor: -webkit-grab;
-  cursor: grab;
 }
 
 h1,
